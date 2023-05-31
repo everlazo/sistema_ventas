@@ -15,6 +15,9 @@ class Licencia extends Model
         'descripcion',
         'imagen',
         'imagen_small',
+        'nit',
+        'direccion',
+        'ciudad',
     ];
 
     public function responsable()
@@ -71,5 +74,25 @@ class Licencia extends Model
             }
         }
         return $usuarios;
+    }
+
+    public function get_nombre()
+    {
+        return $this->nombre;
+    }
+
+    public function get_nit()
+    {
+        return $this->nit;
+    }
+
+    public function get_direccion()
+    {
+        return $this->direccion;
+    }
+
+    public function get_ciudad()
+    {
+        return $this->ciudad;
     }
 }

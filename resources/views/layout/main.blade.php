@@ -212,10 +212,10 @@
         <footer class="site-footer">
             <div class="footer-inner bg-white">
                 <div class="row">
-                    <div class="col-sm-6">
-                        Productos químicos mi fragancia
+                    <div class="col-sm-8" style="text-transform: uppercase;">
+                       {{$licencia->get_nombre()}} &nbsp;&nbsp;&nbsp; <strong>NIT</strong> - {{$licencia->get_nit()}} &nbsp;&nbsp;&nbsp; <strong>DIRECCIÓN</strong> - {{$licencia->get_direccion()}} {{$licencia->get_ciudad()}}
                     </div>
-                    <div class="col-sm-6 text-right">
+                    <div class="col-sm-4 text-right">
                         Designed by <a href="https://www.unicesar.edu.co/index.php/es/" target="_blank">Universidad Popular del Cesar</a>
                     </div>
                 </div>

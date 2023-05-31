@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tercero;
+use App\Dominio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -87,5 +88,11 @@ class TerceroController extends Controller
     public function listar()
     {
         return Tercero::all()->where('id_licencia', session('id_licencia'));
+    }
+
+    public function get_municipios($id)
+    {
+        $municipios = Dominio::where('id_padre', $id)->get();
+        return $municipios;
     }
 }

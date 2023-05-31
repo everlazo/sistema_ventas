@@ -110,8 +110,10 @@
     <br><br><br>
     @if ($factura->estado == 0)
         <center>
-            <label><b style="font-size: 32px; color: red;">Cancelada</b></label>
+            <label><b style="font-size: 32px; color: red;">Anulada</b></label>
         </center>
+        <label><b style="font-size: 16px; color: rgb(19, 17, 17);">Esta factura se anuló por:</b></label>
+        <label><b style="font-size: 14px; color: rgb(19, 17, 17);">{{$factura->motivo_anulacion}}</b></label>
     @endif
 </body>
 

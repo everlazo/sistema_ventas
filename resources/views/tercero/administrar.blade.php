@@ -50,6 +50,8 @@
                                                 <th><center><b>Sexo</b></center></th>
                                                 <th><center><b>Telefono</b></center></th>
                                                 <th><center><b>Direccion</b></center></th>
+                                                <th><center><b>Ciudad</b></center></th>
+                                                <th><center><b>Departamento</b></center></th>
                                                 <th><center><b>Estado</b></center></th>
                                                 <th></th>
                                             </tr>
@@ -67,6 +69,8 @@
                                                 <td><center>{{ $tercero->sexo->nombre }}</center></td>
                                                 <td><center>{{ $tercero->telefono }}</center></td>
                                                 <td><center>{{ $tercero->direccion }}</center></td>
+                                                <td><center>{{ $tercero->get_ciudad() }}</center></td>
+                                                <td><center>{{ $tercero->get_departamento() }}</center></td>
                                                 <td><center>{{ $tercero->get_estado() }}</center></td>
                                                 <td>
                                                     <center>

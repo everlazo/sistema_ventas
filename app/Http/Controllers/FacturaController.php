@@ -207,14 +207,14 @@ class FacturaController extends Controller
         $factura = Factura::find($id_factura);
         $pdf     = \PDF::loadView('pdf.factura', compact('factura'));
         // dd($factura);
-        if($factura->id_dominio_tipo_factura==53){
+        // if($factura->id_dominio_tipo_factura==53){
             $customPaper = array(0, 0, 225.80, 767.00);
             //return view('pdf.ticket_factura', compact('factura'));
             $pdf = \PDF::loadView('pdf.ticket_factura', compact('factura'))
                 ->setPaper($customPaper);
             return $pdf->stream("Factura #" . $factura->numero . '.pdf');
-        }
-        return view('pdf.factura', compact('factura'));
+        // }
+        // return view('pdf.factura', compact('factura'));
         // return $pdf->stream($factura->tipo->nombre . ' ' . $factura->licencia->nombre . '.pdf');
     }
 
@@ -629,8 +629,6 @@ class FacturaController extends Controller
                             //DEVOLVEMOS AL PRODUCTO LA CANTIDAD COMPRADA
                             $this->descontar_inventario_detalles($factura->detalles, $factura->id_factura);
                             $factura->estado           = 0;
-                            $inventario->estado        = 0;
-                            $inventario->save();
                             $factura->id_usuario_anula = $id_usuario;
                             $factura->motivo_anulacion = $post->motivo;
                             $factura->save();

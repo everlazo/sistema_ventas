@@ -17,6 +17,8 @@ class Tercero extends Model
      	'email',
      	'telefono',
      	'direccion',
+        'id_ciudad',
+        'id_departamento',
         'id_dominio_sexo',
         'imagen',
         'clasificacion',
@@ -126,5 +128,22 @@ class Tercero extends Model
         return $response[0]->total;
     }
 
+    public function get_ciudad()
+    {
+        $sql = "SELECT d.nombre 
+                FROM dominio d INNER JOIN tercero t ON t.id_ciudad=d.id_dominio 
+                WHERE id_ciudad = ".$this->id_ciudad;
+        $ciudad = DB::select($sql);
+        return $ciudad[0]->nombre;
+    }
+
+    public function get_departamento()
+    {
+        $sql = "SELECT d.nombre 
+        FROM dominio d INNER JOIN tercero t ON t.id_departamento=d.id_dominio 
+        WHERE id_departamento = " . $this->id_departamento;
+        $departamento = DB::select($sql);
+        return $departamento[0]->nombre;
+    }
 
 }

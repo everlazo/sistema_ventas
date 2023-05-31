@@ -156,7 +156,7 @@
                                         <td><center><a href="{{ route('tercero/view', $factura->id_tercero) }}">{{ $factura->tercero->nombre_completo() }}</a></center></td>
                                         <td><center> {{ date('Y-m-d H:i' ,strtotime($factura->fecha)) }} </center></td>
                                         <td><center> {{ $factura->tipo->nombre }} </center></td>
-                                        <td><center>{{ $factura->canal->nombre }} </center></td>
+                                        <td><center> {{ $factura->tercero->get_ciudad() }} </center></td>
                                         <td><center> {{ $factura->usuario_registra->tercero->nombre_completo() }} </center></td>
                                         <td><center>${{ number_format($factura->valor, 0, '.', '.') }}</center></td>
                                         <td><center>

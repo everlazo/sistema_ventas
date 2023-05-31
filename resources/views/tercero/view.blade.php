@@ -86,6 +86,20 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1"><b>Ciudad:
+                                                    </b>{{ $tercero->get_ciudad() }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1"><b>Departamento:
+                                                    </b>{{ $tercero->get_departamento() }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
                                                 <label for="cc-payment" class="control-label mb-1"><b>Correo electrónico:
                                                     </b>{{ $tercero->email }}</label>
                                             </div>
